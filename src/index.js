@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../config.env') });
 
 const app = express();
 
+app.use(bodyParser.json());
 app.use(authRoutes);
 
 const mongoUri = `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.l65nt.mongodb.net/<dbname>?retryWrites=true&w=majority`;
