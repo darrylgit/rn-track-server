@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(authRoutes);
 
-const mongoUri = `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.l65nt.mongodb.net/<dbname>?retryWrites=true&w=majority`;
+const mongoUri = `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.l65nt.mongodb.net/test?retryWrites=true&w=majority`;
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
