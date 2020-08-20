@@ -25,7 +25,7 @@ mongoose.connection.on('connected', () => {
 });
 
 mongoose.connection.on('error', err => {
-  console.error('Error connection to Mongo:', err);
+  console.error('Error connecting to Mongo:', err);
 });
 
 app.get('/', (req, res) => {
