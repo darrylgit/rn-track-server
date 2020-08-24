@@ -5,13 +5,16 @@ const bodyParser = require('body-parser');
 require('dotenv').config({ path: path.resolve(__dirname, '../config.env') });
 
 require('./models/User');
+require('./models/Track');
 const authRoutes = require('./routes/authRoutes');
+const trackRoutes = require('./routes/trackRoutes');
 const requireAuth = require('./middlewares/requireAuth');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(trackRoutes);
 
 const mongoUri = `mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.l65nt.mongodb.net/test?retryWrites=true&w=majority`;
 
